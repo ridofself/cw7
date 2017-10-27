@@ -1,9 +1,9 @@
 /* test.c */
 
 #include <stdio.h> /* printf */
-#include <stdlib.h> /* exit */
-#include <assert.h> /* assert */
 #include <string.h> /* strcmp */
+#include <assert.h> /* assert */
+#include <malloc.h> /* malloc */
 
 static unsigned int test_count;
 
@@ -13,33 +13,18 @@ void test_test()
 	test_count++;
 }
 
-#include "name.h"
+#include "user.h"
 
-void test_name_new()
+void test_user_create()
 {
-	char* name = "Newname";
-	assert(strcmp(name, name_new(name)) == 0); /* same name */
-	test_count++;
-
-	name_delete(name);
-}
-
-void test_name_delete()
-{
-	char* name = "Deletename";
-	name_new(name);
-	assert(name_delete(name) == 0); /* delete successful */
-	test_count++;
-
-	assert(name_delete(name) == -1); /* no such name */
+	user_create("Testington");
 	test_count++;
 }
 
 void test_all()
 {
 	test_test();
-	test_name_new();
-	test_name_delete();
+	test_user_create();
 }
 
 int main()
