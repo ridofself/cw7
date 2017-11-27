@@ -3,7 +3,7 @@
 # target: dependencies
 # 	command
 
-CC=clang
+CC=gcc
 CFLAGS= -std=c89 -Wall -Wextra -Werror -Wpedantic
 
 all: test cgi-bin/main.cgi

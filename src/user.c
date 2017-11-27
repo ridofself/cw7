@@ -17,7 +17,6 @@ FILE* user_create(const char* name)
 	printf("saving to: %s\n", path); */
 
 	sprintf(path, "cw_users/%s", name);
-	printf("saving to: %s\n", path);
 
 	fp = fopen(path, "wb");
 	fwrite(&newUser, sizeof (struct user), 1, fp);
