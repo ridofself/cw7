@@ -13,9 +13,6 @@ FILE* user_create(const char* name)
 	struct user newUser;
 	char path[80];
 
-/*	sprintf(path, "/var/db/cw_users/%s", name);
-	printf("saving to: %s\n", path); */
-
 	sprintf(path, "cw_users/%s", name);
 
 	fp = fopen(path, "wb");
